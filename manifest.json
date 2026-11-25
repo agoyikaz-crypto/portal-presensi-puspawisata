@@ -1,0 +1,18 @@
+{
+  "name": "SMK Puspa Wisata - Presensi",
+  "short_name": "Presensi SMK",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#2A221B",
+  "theme_color": "#2A221B",
+  "description": "Sistem Presensi & Jadwal SMK Pariwisata Puspa Wisata PGRI Serpong",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
