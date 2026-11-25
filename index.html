@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>SMK Pariwisata Puspa Wisata PGRI Serpong - Sistem Presensi & Jadwal</title>
+
+  <!-- Favicon Sekolah Resmi -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%230090D0'/><circle cx='50' cy='50' r='42' fill='%230090D0'/><path d='M22 68 C35 55, 65 55, 78 68 L74 74 C62 64, 38 64, 26 74 Z' fill='%23FFFFFF'/><path d='M20 74 C34 62, 66 62, 80 74 L76 79 C64 70, 36 70, 24 79 Z' fill='%23E2A012'/><path d='M30 65 L36 32 L44 32 L44 65 Z' fill='%23D9531E'/><path d='M70 65 L64 32 L56 32 L56 65 Z' fill='%23D9531E'/></svg>">
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      overflow: hidden;
+      /* Background kanvas gelap: Menelan celah 1px putih Google hingga hilang 100% */
+      background-color: #2A221B;
+    }
+
+    /* Iframe Layar Penuh Tanpa Border */
+    #portalFrame {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      border: none;
+      outline: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Iframe pemanggil Web App Google Apps Script -->
+  <iframe 
+    id="portalFrame"
+    src="https://script.google.com/macros/s/AKfycbx1ENrWfgYxiNQZ2Hd7BVQZFBjxlW106TKjYQWoxaWeEjE0dNQlDMRkFMSTUi7zkrGd/exec" 
+    allow="camera *; microphone *; geolocation *; autoplay; fullscreen"
+    title="Portal Presensi SMK Puspa Wisata">
+  </iframe>
+</body>
+</html>
