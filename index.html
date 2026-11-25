@@ -56,13 +56,21 @@
   </iframe>
 
   <script>
+    // Registrasi Service Worker PWA
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').catch(function(err) {
+          console.log('SW registration failed:', err);
+        });
+      });
+    }
+
     // Memastikan izin Kamera & GPS terdaftar pada level OS Android untuk mode Installed PWA
     (function() {
       function requestParentPermissions() {
         if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
           navigator.mediaDevices.getUserMedia({ video: true })
             .then(function(stream) {
-              // Langsung hentikan stream setelah izin disetujui di level OS
               stream.getTracks().forEach(function(track) { track.stop(); });
             })
             .catch(function(err) {
@@ -74,13 +82,11 @@
         }
       }
 
-      // Picu pendaftaran izin saat pertama kali layar disentuh/diklik oleh guru
       window.addEventListener('click', function onFirstTouch() {
         requestParentPermissions();
         window.removeEventListener('click', onFirstTouch);
       }, { once: true });
 
-      // Jika berjalan dalam mode Standalone PWA, pancing registrasi izin otomatis
       if (window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true) {
         setTimeout(requestParentPermissions, 1000);
       }
